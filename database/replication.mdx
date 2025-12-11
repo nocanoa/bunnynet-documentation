@@ -1,0 +1,22 @@
+---
+title: Replication
+description: "Learn how Bunny Database separates storage from compute and replicates data across regions for low-latency access."
+---
+
+Bunny Database separates data storage (at rest) from data processing (in compute instances). This separation allows compute resources to be allocated dynamically in different regions while keeping data safely stored in its designated location.
+
+## Storage locations
+
+Data can be stored at rest in:
+
+- Toronto, CA (North America)
+- Frankfurt, DE (Europe)
+
+## Primary and replication regions
+
+When Bunny Database processes incoming requests, it allocates compute instances in multiple possible regions:
+
+- **Primary region**: The only region that can handle write transactions. All operations requiring data modification (INSERT, UPDATE, DELETE) are directed here.
+- **Replication region(s)**: Handle read requests. Placing replication instances closer to users significantly reduces latency and increases overall throughput, making them ideal for high read traffic.
+
+This architecture scales read-heavy workloads and ensures users worldwide experience low-latency access.

@@ -1,0 +1,40 @@
+---
+title: Bunny Database
+sidebarTitle: Introduction
+description: "Bunny Database is a fully managed relational database service that lets you deploy simple, globally distributed SQL databases."
+---
+
+Bunny Database is a fully managed relational database service built on libSQL, a fork of SQLite. It allows you to easily deploy simple, globally distributed SQL databases. The service automatically handles scaling and replication, and stays idle when inactive for a usage-based billing model.
+
+## Key features
+
+- **SQLite compatibility**: Use standard SQL syntax and leverage existing SQLite knowledge, tools, and libraries
+- **Global replication**: Replicate your database across multiple regions for low-latency access worldwide
+- **Multiple connection options**: Connect via HTTP API, native SDKs, or popular ORMs
+- **Edge integration**: Works seamlessly with Edge Scripting and Magic Containers
+- **Fully managed**: No infrastructure to maintain with automatic scaling and replication
+- **Usage-based billing**: Stays idle when inactive, so you only pay for what you use
+
+## Integrations
+
+Bunny Database integrates with other bunny.net compute services:
+
+- **Magic Containers**: Deploy any Docker workload without provisioning. When using Bunny Database with Magic Containers, both the databases and the connected containerized code are deployed to the same (or nearby) regions to minimize latency.
+- **Edge Scripting**: Run additional lightweight serverless JavaScript/TypeScript logic close to your users.
+
+## Getting started
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/database/quickstart">
+    Create your first database and run queries in minutes
+  </Card>
+  <Card title="SQL API" icon="code" href="/database/connect/sql-api">
+    Connect directly using the HTTP-based SQL API
+  </Card>
+  <Card title="SDKs" icon="puzzle" href="/database/connect/sdks">
+    Use official client libraries for your language
+  </Card>
+  <Card title="ORMs" icon="plug" href="/database/connect/orms">
+    Integrate with Drizzle, and other ORMs
+  </Card>
+</CardGroup>

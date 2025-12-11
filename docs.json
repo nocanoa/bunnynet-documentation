@@ -340,7 +340,7 @@
             "tab": "Documentation",
             "groups": [
               {
-                "group": "Edge Scripting",
+                "group": "Bunny Edge Scripting",
                 "pages": [
                   "scripting/index",
                   "scripting/quickstart",
@@ -686,7 +686,7 @@
             "tab": "Documentation",
             "groups": [
               {
-                "group": "DNS",
+                "group": "Bunny DNS",
                 "pages": ["docs/dns-overview", "docs/dns-dnssec"]
               },
               {
@@ -710,7 +710,7 @@
             "tab": "Documentation",
             "groups": [
               {
-                "group": "AI Image Generation",
+                "group": "Bunny AI",
                 "pages": [
                   "ai-image-generation/index",
                   "ai-image-generation/quickstart",
@@ -747,7 +747,11 @@
             "groups": [
               {
                 "group": "Bunny Database",
-                "pages": ["database/overview", "database/quickstart"]
+                "pages": [
+                  "database/index",
+                  "database/quickstart",
+                  "database/pricing"
+                ]
               },
               {
                 "group": "Connect",
@@ -769,8 +773,8 @@
               {
                 "group": "Platform",
                 "pages": [
+                  "database/replication",
                   "database/metrics",
-                  "database/pricing",
                   "database/limits"
                 ]
               }
@@ -1912,6 +1916,11 @@
     {
       "source": "/docs/cdn-origin-errors",
       "destination": "/cdn/logging/origin-errors",
+      "permanent": true
+    },
+    {
+      "source": "/docs/database-overview",
+      "destination": "/database",
       "permanent": true
     }
   ]
