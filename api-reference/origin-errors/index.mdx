@@ -1,0 +1,45 @@
+---
+title: Origin Errors API Reference
+sidebarTitle: Overview
+description: Retrieve origin error logs for your pull zones via HTTP.
+---
+
+The Origin Errors API provides visibility into failed origin requests. Query error logs by pull zone and date to identify DNS failures, timeouts, and other origin issues.
+
+## Base URL
+
+```
+https://cdn-origin-logging.bunny.net
+```
+
+## Authentication
+
+Authenticate using the `AccessKey` header with your account API key:
+
+```bash
+curl --request GET \
+  --url https://cdn-origin-logging.bunny.net/{pullZoneId}/{dateTime} \
+  --header 'AccessKey: YOUR_API_KEY'
+```
+
+<Note>
+  Find your API key in the [account
+  settings](https://dash.bunny.net/account/settings) under **API Keys**.
+</Note>
+
+## Error codes
+
+The API returns logs with the following error codes:
+
+| Error Code | Description |
+| --- | --- |
+| `dns_lookup` | Origin DNS lookup failed |
+| `http_timeout` | Request to origin timed out |
+| `http_request_exception` | HTTP request exception occurred |
+| `http_request_failure` | HTTP request failed |
+| `http_invalid_range` | Invalid range request |
+| `http_loop_detected` | Request loop detected |
+| `http_invalid_compression` | Invalid compression in response |
+| `network_socket_exception` | Network socket exception |
+| `network_io_error` | Network I/O error |
+| `notfound_localdb` | Not found in local database |

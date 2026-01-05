@@ -807,16 +807,17 @@
               {
                 "group": "Core Platform API",
                 "pages": [
-                  "api-reference/platform/overview",
-                  "api-reference/platform/errors"
+                  "api-reference/core/index",
+                  "api-reference/core/errors"
                 ],
                 "openapi": {
                   "source": "https://docs.bunny.net/openapi/bunnynet-api-1.json",
-                  "directory": "api-reference/platform"
+                  "directory": "api-reference/core"
                 }
               },
               {
                 "group": "Origin Errors API",
+                "pages": ["api-reference/origin-errors/index"],
                 "openapi": {
                   "source": "https://docs.bunny.net/openapi/origin-errors-spec.json",
                   "directory": "api-reference/origin-errors"
@@ -824,7 +825,7 @@
               },
               {
                 "group": "Storage API",
-                "pages": ["api-reference/storage/overview"],
+                "pages": ["api-reference/storage/index"],
                 "openapi": {
                   "source": "https://docs.bunny.net/openapi/bunnynet-edge-storage-api.json",
                   "directory": "api-reference/storage"
@@ -832,7 +833,7 @@
               },
               {
                 "group": "Stream API",
-                "pages": ["api-reference/stream/overview"],
+                "pages": ["api-reference/stream/index"],
                 "openapi": {
                   "source": "https://docs.bunny.net/openapi/stream-api.json",
                   "directory": "api-reference/stream"
@@ -840,7 +841,7 @@
               },
               {
                 "group": "Shield API",
-                "pages": ["api-reference/shield/overview"],
+                "pages": ["api-reference/shield/index"],
                 "openapi": {
                   "source": "https://docs.bunny.net/openapi/bunny-shield-api.json",
                   "directory": "api-reference/shield"
@@ -848,7 +849,7 @@
               },
               {
                 "group": "Edge Scripting API",
-                "pages": ["api-reference/scripting/overview"],
+                "pages": ["api-reference/scripting/index"],
                 "openapi": {
                   "source": "https://docs.bunny.net/openapi/edge-scripting-api.json",
                   "directory": "api-reference/scripting"
@@ -1438,52 +1439,52 @@
     },
     {
       "source": "/reference/countriespublic_getcountrylist",
-      "destination": "/api-reference/platform/countries/get-country-list",
+      "destination": "/api-reference/core/countries/get-country-list",
       "permanent": true
     },
     {
       "source": "/reference/dnszonepublic_index",
-      "destination": "/api-reference/platform/dns-zone/list-dns-zones",
+      "destination": "/api-reference/core/dns-zone/list-dns-zones",
       "permanent": true
     },
     {
       "source": "/reference/pullzonepublic_index",
-      "destination": "/api-reference/platform/pull-zone/list-pull-zones",
+      "destination": "/api-reference/core/pull-zone/list-pull-zones",
       "permanent": true
     },
     {
       "source": "/reference/videolibrarypublic_index",
-      "destination": "/api-reference/platform/stream-video-library/list-video-libraries",
+      "destination": "/api-reference/core/stream-video-library/list-video-libraries",
       "permanent": true
     },
     {
       "source": "/reference/storagezonepublic_index",
-      "destination": "/api-reference/platform/storage-zone/list-storage-zones",
+      "destination": "/api-reference/core/storage-zone/list-storage-zones",
       "permanent": true
     },
     {
       "source": "/reference/regionpublic_index",
-      "destination": "/api-reference/platform/region/region-list",
+      "destination": "/api-reference/core/region/region-list",
       "permanent": true
     },
     {
       "source": "/reference/purgepublic_indexpost",
-      "destination": "/api-reference/platform/purge/purge-url",
+      "destination": "/api-reference/core/purge/purge-url",
       "permanent": true
     },
     {
       "source": "/reference/statisticspublic_index",
-      "destination": "/api-reference/platform/statistics/get-statistics",
+      "destination": "/api-reference/core/statistics/get-statistics",
       "permanent": true
     },
     {
       "source": "/reference/apikeypublic_listapikeys",
-      "destination": "/api-reference/platform/api-keys/list-api-keys",
+      "destination": "/api-reference/core/api-keys/list-api-keys",
       "permanent": true
     },
     {
       "source": "/reference/getuserauditlog_getuserauditlog",
-      "destination": "/api-reference/platform/user/getuserauditlog",
+      "destination": "/api-reference/core/user/getuserauditlog",
       "permanent": true
     },
     {
@@ -1503,7 +1504,7 @@
     },
     {
       "source": "/reference/stream-api-overview",
-      "destination": "/api-reference/stream/overview",
+      "destination": "/api-reference/stream",
       "permanent": true
     },
     {

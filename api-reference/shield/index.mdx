@@ -1,0 +1,45 @@
+---
+title: Shield API Reference
+sidebarTitle: Overview
+description: Configure WAF rules, rate limiting, and security settings via HTTP.
+---
+
+The Shield API provides a RESTful interface for managing security settings on your pull zones. Configure WAF rules, rate limiting, bot detection, and access controls programmatically.
+
+## Base URL
+
+```
+https://api.bunny.net
+```
+
+## Authentication
+
+Authenticate using the `AccessKey` header with your account API key:
+
+```bash
+curl --request GET \
+  --url https://api.bunny.net/shield/waf/{shieldZoneId} \
+  --header 'AccessKey: YOUR_API_KEY'
+```
+
+<Note>
+  Find your API key in the [account
+  settings](https://dash.bunny.net/account/settings) under **API Keys**.
+</Note>
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card title="WAF" href="/shield/waf">
+    Block exploits and OWASP Top 10 vulnerabilities
+  </Card>
+  <Card title="Rate Limiting" href="/shield/rate-limiting">
+    Control request rates per IP, user, or path
+  </Card>
+  <Card title="Bot Detection" href="/shield/bot-detection">
+    Detect and block malicious bots
+  </Card>
+  <Card title="Access Lists" href="/shield/access-lists">
+    Manage IP allowlists and blocklists
+  </Card>
+</CardGroup>
