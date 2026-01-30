@@ -1500,6 +1500,11 @@
       "permanent": true
     },
     {
+      "source": "/reference/api-overview",
+      "destination": "/api-reference",
+      "permanent": true
+    },
+    {
       "source": "/reference/countriespublic_getcountrylist",
       "destination": "/api-reference/core/countries/get-country-list",
       "permanent": true
