@@ -908,7 +908,6 @@
                 }
               },
               {
-                "hidden": true,
                 "group": "Magic Containers API",
                 "pages": ["api-reference/magic-containers/overview"],
                 "openapi": {
