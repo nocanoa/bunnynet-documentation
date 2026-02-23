@@ -90,14 +90,13 @@
                       "billing/add-funds",
                       "billing/auto-recharge",
                       "billing/billing-history",
-                      "billing/sales-tax",
-                      "billing/affiliate-program"
+                      "billing/sales-tax"
                     ]
                   },
                   {
                     "group": "Affiliate Program",
-                    "hidden": true,
                     "pages": [
+                      "billing/affiliate-program",
                       "billing/affiliate-faq",
                       "billing/affiliate-best-practices",
                       "billing/affiliate-guidelines"
@@ -1897,17 +1896,17 @@
     },
     {
       "source": "/docs/affiliate-competition-rules",
-      "destination": "/accounts-and-billing/affiliate-program",
+      "destination": "/billing/affiliate-program",
       "permanent": true
     },
     {
       "source": "/docs/best-practices-manual",
-      "destination": "/accounts-and-billing/affiliate-best-practices",
+      "destination": "/billing/affiliate-best-practices",
       "permanent": true
     },
     {
       "source": "/docs/affiliate-guidelines",
-      "destination": "/accounts-and-billing/affiliate-guidelines",
+      "destination": "/billing/affiliate-guidelines",
       "permanent": true
     },
     {
