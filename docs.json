@@ -721,14 +721,6 @@
                   "optimizer/burrow-smart-routing",
                   "optimizer/html-prerender"
                 ]
-              },
-              {
-                "group": "Reference",
-                "pages": [
-                  "optimizer/statistics",
-                  "optimizer/faq",
-                  "optimizer/limits"
-                ]
               }
             ]
           }
