@@ -35,12 +35,21 @@ function buildProductMap() {
   }
 
   // Mintlify docs.json uses "navigation" or "tabs" at the top level
-  const navSources = [
-    ...(docsConfig.navigation || []),
-    ...(docsConfig.tabs?.flatMap((t) => t.pages || t.navigation || []) || []),
-  ];
+  // Mintlify docs.json uses navigation.products[] where each has tabs[].groups[].pages[]
+  const products =
+    docsConfig.navigation?.products || docsConfig.navigation || [];
 
-  walk(navSources);
+  for (const product of Array.isArray(products) ? products : []) {
+    const productName = product.product || product.group;
+    const tabs = product.tabs || [];
+    for (const tab of tabs) {
+      const groups = tab.groups || [];
+      for (const group of groups) {
+        walk(group, productName);
+      }
+    }
+  }
+
   return map;
 }
 
