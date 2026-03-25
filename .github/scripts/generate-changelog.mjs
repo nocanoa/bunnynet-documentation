@@ -62,13 +62,23 @@ function getChangedDocs() {
     .split("\n")
     .filter(Boolean);
 
+  const baseSha = process.env.BASE_SHA;
+  const mergeSha = process.env.MERGE_SHA;
+
   return files.map((file) => {
     let diff = "";
     try {
-      diff = execSync(
-        `git diff ${process.env.GITHUB_EVENT_PATH ? "" : "HEAD~1 HEAD -- "}${file}`,
-        { encoding: "utf-8", maxBuffer: 1024 * 512 },
-      );
+      if (baseSha && mergeSha) {
+        diff = execSync(`git diff ${baseSha} ${mergeSha} -- ${file}`, {
+          encoding: "utf-8",
+          maxBuffer: 1024 * 512,
+        });
+      } else {
+        diff = execSync(`git diff HEAD~1 HEAD -- ${file}`, {
+          encoding: "utf-8",
+          maxBuffer: 1024 * 512,
+        });
+      }
     } catch {
       // New file — read full content
       try {
@@ -77,6 +87,16 @@ function getChangedDocs() {
         diff = "(file not found)";
       }
     }
+
+    // If diff is still empty (e.g. file was added), read the full file
+    if (!diff.trim()) {
+      try {
+        diff = `(new file)\n${readFileSync(file, "utf-8")}`;
+      } catch {
+        diff = "(file not found)";
+      }
+    }
+
     return { file, diff };
   });
 }
