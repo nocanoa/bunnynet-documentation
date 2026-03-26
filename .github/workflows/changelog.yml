@@ -6,7 +6,9 @@ on:
 
 jobs:
   update-changelog:
-    if: github.event.pull_request.merged == true
+    if: >-
+      github.event.pull_request.merged == true &&
+      !startsWith(github.head_ref, 'changelog/')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -39,6 +41,7 @@ jobs:
         if: steps.changed.outputs.skip == 'false'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MERGED_AT: ${{ github.event.pull_request.merged_at }}
         run: node .github/scripts/generate-changelog.mjs
 
       - name: Create PR with changelog updates

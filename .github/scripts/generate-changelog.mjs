@@ -106,7 +106,10 @@ function getChangedDocs() {
 // ---------------------------------------------------------------------------
 
 async function classifyChanges(changedDocs, productMap) {
-  const today = new Date().toISOString().slice(0, 10);
+  const mergedAt = process.env.MERGED_AT;
+  const today = mergedAt
+    ? new Date(mergedAt).toISOString().slice(0, 10)
+    : new Date().toISOString().slice(0, 10);
 
   const filesContext = changedDocs
     .map((d) => {
@@ -188,6 +191,10 @@ ${filesContext}`;
 // ---------------------------------------------------------------------------
 
 function formatDate() {
+  const mergedAt = process.env.MERGED_AT;
+  if (mergedAt) {
+    return new Date(mergedAt).toISOString().slice(0, 10);
+  }
   return new Date().toISOString().slice(0, 10);
 }
 
