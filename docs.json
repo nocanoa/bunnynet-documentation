@@ -972,10 +972,7 @@
                   "cli/commands/auth",
                   "cli/commands/config",
                   "cli/commands/db",
-                  {
-                    "group": "Scripts",
-                    "pages": ["cli/commands/scripts"]
-                  },
+                  "cli/commands/scripts",
                   {
                     "group": "Registries",
                     "hidden": true,
