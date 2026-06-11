@@ -67,7 +67,7 @@ By default, many of the player’s controls and behaviors, such as captions, aut
 
 ![](/images/docs/d267314b297a80462b1668920e710619e6a80d7c2e1e9ad1b9491b4ccbdcda84-image.png)
 
-However, you can also fine-tune or override these defaults on a per-embed basis by adding query parameters directly to the embed URL. This flexibility allows you to tailor the playback experience for specific pages or use-cases without affecting the global settings of your library.
+However, you can also fine-tune or override these defaults on a per-embed basis by adding query parameters directly to the embed or direct play URL. This flexibility allows you to tailor the playback experience for specific pages or use-cases without affecting the global settings of your library.
 
 ## Supported Parameters
 
@@ -76,9 +76,9 @@ Below is a concise table summarizing each parameter, its possible values, a brie
 | **Parameter** | **Values** | **Description** | **Default Value** |
 | --- | --- | --- | --- |
 | **`autoplay`** | `true`, `false` | Controls whether the video should start playing automatically. Due to browser restrictions on auto-play, this may not always work. | `true` |
-| **`captions`** | _caption short-code string_ | Controls the default captions file that will be shown. By passing the caption code, the player will automatically load these captions. By default, the player remembers the user's last selection or does not load captions. | _N/A_ |
+| **`captions`** | `caption short-code string`<br />`-auto` | Controls the default captions file that will be shown. By passing the caption code, the player will automatically load these captions. By default, the player remembers the user's last selection or does not load captions. Use in combination with `-auto`after the country code for the captions to display automatically on playback. | _N/A_ |
 | **`preload`** | `true`, `false` | Controls whether the video files are preloaded. When set to `true`, the player immediately starts downloading the video so playback begins more quickly. | `true` |
-| **`t`** | 1. `Xs` or `1h20m45s` 2) `hh:mm:ss` 3) Numeric | Sets the video start time. Supports multiple formats: seconds/minutes/hours notation, `hh:mm:ss` format, or a simple numeric value interpreted as seconds. | _N/A_ |
+| **`t`** | `Xs` ,`1h20m45s` , `hh:mm:ss`<br />, `numeric` | Sets the video start time. Supports multiple formats: hours/minutes/seconds notation, `hh:mm:ss` format, or a simple numeric value interpreted as seconds. | _N/A_ |
 | **`chromecast`** | `true`, `false` | Enables or disables Chromecast support within the player. | _N/A_ |
 | **`disableAirplay`** | `true`, `false` | Disables AirPlay support when set to `true`. | _N/A_ |
 | **`disableIosPlayer`** | `true`, `false` | Disables the native iOS player (used typically for fullscreen handling on iOS). | _N/A_ |
@@ -89,6 +89,14 @@ Below is a concise table summarizing each parameter, its possible values, a brie
 | **`showSpeed`** | `true`, `false` | Shows a speed control within the player, allowing playback rate adjustments. | _N/A_ |
 | **`rememberPosition`** | `true`, `false` | Controls whether the player remembers the last playback position for the viewer within their browser. If set to `true`, the player stores the last position and attempts to resume from that point when the viewer returns. When `false`, the video always starts from the beginning. | `false` |
 | `compactControls` | `true`, `false` | Enables compact UI view for the bunny player, allowing more space for video on desktop and mobile browsers. | `false` |
+
+## Direct play URL query parameter example
+
+```bash
+https://player.mediadelivery.net/play/{video_library_id}/{video_id}?t=30s
+```
+
+This example uses a query parameter which means the direct play URL will start video playback at 30 seconds.
 
 ## Player keyboard shortcuts
 
